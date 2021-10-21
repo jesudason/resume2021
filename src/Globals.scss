@@ -1,0 +1,27 @@
+$tag-colors: (
+    1: #ef476f,
+    2: #ffd166,
+    3: #06d6a0,
+    4: #118ab2, 
+    5: #073b4c
+  );
+
+$colors: (
+    brand: (
+        primary:    #ffa949,
+        secondary:  #eda2fs
+    ),  
+    tags: (
+      1: #ef476f,
+      2: #ffd166,
+      3: #06d6a0,
+      4: #118ab2, 
+      5: #073b4c
+    )
+);
+
+@each $tag in map-keys($colors) {
+    &.skill#{$tag} {     
+        background-color: map-get(map-get($colors, tags), $tag);
+    } 
+}
